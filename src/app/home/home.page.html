@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Inbox
+      Pokemon List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -20,6 +20,7 @@
   </ion-header>
   
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <!-- <app-message *ngFor="let message of getMessages()" [message]="message"></app-message> -->
+     <app-pokemon *ngFor="let pokemon of pokemons" [name]="pokemon.name" [url]="pokemon.url"></app-pokemon>
   </ion-list>
 </ion-content>

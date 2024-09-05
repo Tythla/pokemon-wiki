@@ -3,7 +3,7 @@ import { RefresherCustomEvent } from '@ionic/angular';
 import { MessageComponent } from '../message/message.component';
 
 import { DataService, Message } from '../services/data.service';
-import { PokemonService } from '../services/pokemon.service';
+import { PokemonService, Pokemon } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +13,11 @@ import { PokemonService } from '../services/pokemon.service';
 export class HomePage {
   private data = inject(DataService);
   private pokemonS = inject(PokemonService);
-  pokemons = [];
+  pokemons:Pokemon[]= [];
 
-  constructor() {}
+  constructor() {
+    this.getPokemons();
+  }
 
   refresh(ev: any) {
     setTimeout(() => {
@@ -28,8 +30,8 @@ export class HomePage {
   }
 
   getPokemons() {
-    this.pokemonS.getList().subscribe(res => {
-      this.pokemons=res.results
+    this.pokemonS.getList().subscribe(pokemons => {
+      this.pokemons = pokemons;
     })
   }
 }
