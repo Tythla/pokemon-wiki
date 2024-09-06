@@ -34,4 +34,8 @@ export class HomePage {
       this.pokemons = pokemons;
     })
   }
+
+  setPokemon(pokemon:Pokemon) {
+    this.pokemonS.setSelectedPokemon(pokemon);
+  }
 }

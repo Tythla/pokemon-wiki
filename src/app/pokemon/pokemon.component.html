@@ -1,4 +1,21 @@
-<p>
-  pokemon works!
-</p>
-<h1>{{name}}</h1>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <img [src]="img" />
+  <ion-card-header>
+    <ion-card-title>{{name}}</ion-card-title>
+    <ion-card-subtitle>Type: {{type}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Here's a small text description for the card content. Nothing more, nothing less.
+  </ion-card-content>
+</ion-card>
+</ion-content>
